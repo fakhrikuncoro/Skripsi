@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg" style="background-color:white  ;" >
     <div class="container">
       <div class="row">
         <div class="col">
@@ -8,10 +8,13 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link active" href="<?= base_url("/"); ?>">Home</a>
-          <a class="nav-item nav-link" href="<?= base_url("/TambahJurusan"); ?>">Tambah Kelas</a>
+          <a class="nav-item nav-link active" href="<?= base_url("/Angkatan"); ?>">Home</a>
+          <a class="nav-item nav-link" href="<?= base_url("/TambahKelas"); ?>">Tambah Kelas</a>
           <a class="nav-item nav-link" href="<?= base_url("/TambahDosen"); ?>">Tambah Dosen</a>
           <a class="nav-item nav-link" href="<?= base_url("/TambahPelajaran"); ?>">Tambah Pelajaran</a>
+          <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url(); ?>/logout">Logout</a>
+                    </li>
         </div>
       </div>
         </div>

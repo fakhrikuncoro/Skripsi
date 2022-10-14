@@ -7,4 +7,4 @@ class IndexModels extends Model
 {
     protected $table ='index';
 }
- ?>
+?>

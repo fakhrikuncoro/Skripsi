@@ -12,19 +12,20 @@ class angkatan extends BaseController
         $this->angkatanmodel = new AngkatanModel();
     }
     
-    public function index($angkatan)
+    public function index()
     {
         
-        $angkatan = $this->angkatanmodel->where(['slug' => $angkatan])->findAll();
+        $angkatan = $this->angkatanmodel->findAll();
+
         $data = [
-            'title' => "angkatan Kelas",
-            'angkatan'=> $angkatan ? $angkatan[0]['angkatan'] : "Unkonwn",
-            'pembimbing'=> $angkatan ? $angkatan[0]['pembimbing'] : "Unkonwn",
-            'kelas'=> $angkatan ? $angkatan[0]['kelas'] : "Unkonwn",
-            'slug'=> $angkatan ? $angkatan[0]['slug'] : "Unkonwn",
-            'angkatan' => $angkatan
-            
+            'title' => "Jurusan Kampus",
+            'jurusan' => $angkatan,
+            'angkatan' => $angkatan,
+            'pembimbing'=> $angkatan,
+            'kelas' => $angkatan,
+            'slug' => $angkatan
         ];
+
 
         return view('pages/angkatan', $data);
 

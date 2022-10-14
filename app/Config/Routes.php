@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('users');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,14 +31,25 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'login::index');
 
 
 //routes
+$routes->get('/register', 'register::index');
+$routes->post('/insert_user', 'register::insert_user');
+$routes->post('/auth', 'login::auth');
+$routes->get('admin/angkatan/', 'admin/angkatan::index');
+$routes->get('/logout', 'Login::logout');
 
-$routes->get('/pages', "pages::index");
-$routes->get('/detail/(:any)', 'detail::index/$2');
-$routes->get('/angkatan/(:any)', 'angkatan::index/$1');
+$routes->get('/login', 'Login::index');
+$routes->post('/login/process', 'Login::process');
+$routes->get('/logout', 'Login::logout');
+
+$routes->get('/pages', 'angkatan::index');
+$routes->get('/detail/(:any)', 'detail::index/$1');
+$routes->get('/angkatan/(:any)', 'angkatan::index');
+
+$routes->get('notification', 'MessageController::showSweetAlertMessages');
 
 /*
  * --------------------------------------------------------------------

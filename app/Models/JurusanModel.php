@@ -10,4 +10,9 @@ class JurusanModel extends Model
     protected $useTimeStamps = true ;
     protected $primaryKey= 'id_jurusan';
     protected $allowedFields = ['id_jurusan','jurusan','slug'];
+    
+    public function search($keyword)
+    {
+        return $this-> table ('jadwal')-> like('mapel', $keyword);
+    }
 }

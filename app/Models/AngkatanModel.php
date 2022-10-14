@@ -8,6 +8,6 @@ class AngkatanModel extends Model
 {
     protected $table            = 'angkatan';
     protected $useTimeStamps    = true ;
-    protected $primaryKey       = 'id_angkatan';
-    protected $allowedFields    = ['angkatan','pembimbing','slug','kelas'];
+    protected $primaryKey       = 'id_kelas';
+    protected $allowedFields    = ['jurusan','angkatan','kelas','pembimbing','slug'];
 }

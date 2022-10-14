@@ -10,4 +10,9 @@ class DosenModel extends Model
     protected $useTimeStamps = true ;
     protected $primaryKey    = 'id_dosen';
     protected $allowedFields = ['nama_dosen','kontak','email'];
+
+    public function search($keyword)
+    {
+        return $this-> table ('dosen')-> like('nama_dosen', $keyword);
+    }
 }
